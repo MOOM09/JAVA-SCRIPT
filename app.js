@@ -24,27 +24,30 @@
 
 function memberShip()
 {
-    let member=1;
+    let member = 1;
+    let askUser;
+
     while(member)
-{
-    let askUser=String(prompt("ARE YOU A STUDENT OR REGULAR?? ANSWER (STUDENT/REGULAR) JUST"))
+    {
+        askUser = String(prompt("ARE YOU A STUDENT OR REGULAR?? ANSWER (STUDENT/REGULAR) JUST"));
 
-    if(askUser=="REGULAR")
+        if(askUser == "REGULAR")
         {
-alert("HELLO MR MEMBER");
-break
+            alert("HELLO MR MEMBER");
+            break;
         }
-
- else if(askUser=="STUDENT")
+        else if(askUser == "STUDENT")
         {
-alert("HELLO MR SCHOLAR");
-break
+            alert("HELLO MR SCHOLAR");
+            break;
         }
-else
-    {member++}
+        else
+        {
+            member++;
+        }
+    }
 
-}
-return askUser;
+    return askUser;
 }
 
 function userData()
@@ -76,5 +79,40 @@ console.log(read)
 
 
 }
+function applyDiscount(userData)
+{
+    if(userData[1] == "STUDENT")
+    {
+        userData.push("20% Discount");
+    }
+    else
+    {
+        userData.push("No Discount");
+    }
 
+    return userData;
+}
+        
 
+function addNewGenre(genre){
+availableGenres.push(genre)
+return availableGenres
+}
+
+function displayGenres()
+{
+for(let i=0;i<availableGenres.length;i++)
+console.log("- We offer:"+availableGenres[i])    
+}
+
+var availableGenres = ["Fiction", "Science", "History", "Biography"];
+
+let addGenre = String(prompt("write the new genre"));
+
+let user = userData();
+
+applyDiscount(user);
+
+addNewGenre(addGenre);
+
+displayGenres();
